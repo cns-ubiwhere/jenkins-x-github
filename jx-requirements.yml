@@ -20,13 +20,16 @@ spec:
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    domain: "jx.snob.ubiwhere.com"
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
-      email: ""
+      email: "admin@snob.ubiwhere.com"
       enabled: false
       production: false
+    annotations:
+      cert-manager.io/cluster-issuer: "letsenc-prod"
+      kubernetes.io/ingress.class: "nginx"
   repository: bucketrepo
   secretStorage: local
   vault: {}
